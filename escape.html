@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="escape.css">
+    <script src="https://kit.fontawesome.com/f14cd0ec35.js" crossorigin="anonymous"></script>
+    <title>Escape</title>
+</head>
+<body >
+    <header>
+       <a href="#" class="logo">Chasing Stars</a>
+       <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#" >About</a></li>
+        <li><a href="#" >Collaborate</a></li>
+       </ul>
+    </header>
+   <section>
+    <img src="C:\Users\shiva\Pictures\base.png" id="base">
+    <img src="C:\Users\shiva\Pictures\front.png" id="front">
+    <h2 id="text">Let's escape reality for a moment</h2>
+    <img src="C:\Users\shiva\Pictures\back.png" id="back">
+    
+   </section>
+
+   <div class="next">
+    
+
+   <div class="container">
+        <div class="music-player">
+           
+            
+            <h3>It's You</h3>
+            <p>Ali Gatie</p>
+
+            <audio  id="song">
+                <source src="C:\Users\shiva\Downloads\It's-You---Ali-Gatie-320(PagalWorld).mp3">
+            </audio>
+
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="heading">
+                Here's the playlist
+            </h2>
+            <p>
+                Music provides a total brain workout.<br>
+                Research has shown that listening to music can reduce anxiety,<br>
+                blood pressure and pain aswell as improve sleep quality,<br>
+                mood, mental alertness and memory. 
+            </p>
+        </div>
+        <div class="link">
+            <p>
+               <button type="button" onclick="location.href='https://open.spotify.com/playlist/2paNkWS6FuT2V8D3zKeGlf?si=8d21bf04f4e04094'">Enjoy</button>
+            </p>
+        </div>
+   </div>
+ 
+
+
+   
+    
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Chasing Stars</h3>
+        <p>Take some time for yourself<br>
+         relax and enjoy the moment.</p>
+         <ul class="socials">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa fa-spotify"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+         </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>
+            copyright &copy;2023 designed by <span>Shivani Tripurari</span>
+        </p>
+    </div>
+</footer>
+   
+   <script>
+    let front= document.getElementById('front');
+    let text= document.getElementById('text');
+    let back= document.getElementById('back');
+    let song= document.getElementById('song');
+    let ctrlIcon= document.getElementById('ctrlIcon');
+
+    song.onloadedmetadata = function(){
+        
+    }
+
+    function playPause(){
+        if (ctrlIcon.classList.contains("fa-pause")){
+            song.pause();
+            ctrlIcon.classList.remove("fa-pause");
+            ctrlIcon.classList.add("fa-play");
+        }
+        else{
+            song.play();
+            ctrlIcon.classList.remove("fa-play");
+            ctrlIcon.classList.add("fa-pause");
+        }
+    }
+
+    window.addEventListener('scroll',function(){
+        let value= window.scrollY;
+        front.style.top=value*0.5+'px';
+        back.style.top=value*0.05+'px'; 
+        text.style.marginRight=value*3.5+'px';
+        text.style.marginTop=value*1+'px';
+
+    });
+   </script>
+</body>
+</html>  
